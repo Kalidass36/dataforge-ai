@@ -1,0 +1,568 @@
+[
+  {
+    "table": "customers",
+    "row_count": 10,
+    "columns": [
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          8,
+          1,
+          6
+        ]
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Arun Kumar",
+          "Priya Sharma",
+          "Rahul Singh"
+        ]
+      },
+      {
+        "name": "email",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "anjali@example.com",
+          "arun@example.com",
+          "divya@example.com"
+        ]
+      },
+      {
+        "name": "region",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Chennai",
+          "Bangalore",
+          "Hyderabad"
+        ]
+      },
+      {
+        "name": "signup_date",
+        "type": "DATE",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "2025-01-15",
+          "2025-02-20",
+          "2025-03-10"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "orders",
+        "from_column": "customer_id",
+        "to_table": "customers",
+        "to_column": "customer_id"
+      },
+      {
+        "from_table": "support_tickets",
+        "from_column": "customer_id",
+        "to_table": "customers",
+        "to_column": "customer_id"
+      }
+    ],
+    "ai_description": "TABLE PURPOSE:\nThe customers table stores information about individual customers, including their contact details, region, and signup date. It serves as a central hub for customer data.\n\nCOLUMN DESCRIPTIONS:\n- customer_id: A unique identifier for each customer, designated as the primary key.\n- name: The customer's full name.\n- email: The customer's email address.\n- region: The customer's region.\n- signup_date: The date the customer signed up.\n\nRELATIONSHIPS:\nThe customers table has relationships with the orders and support_tickets tables, as it is connected to customers through the customer_id column.\n\nBUSINESS USE:\nThis table might be used to retrieve customer information for marketing or sales purposes, or to match customers with relevant orders or support tickets.\n\nIMPORTANT:\nThe table has a limited number of rows (10) and provides sample values for some columns, indicating that it might be a sample dataset or a subset of a larger customer database."
+  },
+  {
+    "table": "employees",
+    "row_count": 8,
+    "columns": [
+      {
+        "name": "employee_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Amit",
+          "Neha",
+          "Ravi"
+        ]
+      },
+      {
+        "name": "department",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Engineering",
+          "Engineering",
+          "Sales"
+        ]
+      },
+      {
+        "name": "salary",
+        "type": "REAL",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          85000.0,
+          92000.0,
+          65000.0
+        ]
+      },
+      {
+        "name": "hire_date",
+        "type": "DATE",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "2023-01-10",
+          "2022-08-15",
+          "2024-02-20"
+        ]
+      }
+    ],
+    "relationships": [],
+    "ai_description": "TABLE PURPOSE:\nThe employees table stores information about the company's employees, including their basic details such as name, department, salary, and hire date.\n\nCOLUMN DESCRIPTIONS:\n- employee_id: Unique identifier for each employee.\n- name: Full name of the employee.\n- department: Department where the employee is working.\n- salary: Current salary of the employee.\n- hire_date: Date of hire for the employee.\n\nRELATIONSHIPS:\nNo relationships between tables are specified.\n\nBUSINESS USE:\nThis table can be used by HR departments to manage employee information, track salaries and benefits, and perform employee-related business operations.\n\nIMPORTANT:\nThis table appears to be a standard HR database table, storing basic employee information."
+  },
+  {
+    "table": "order_items",
+    "row_count": 130,
+    "columns": [
+      {
+        "name": "order_item_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          3,
+          1,
+          3
+        ]
+      },
+      {
+        "name": "quantity",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "unit_price",
+        "type": "REAL",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          4500.0,
+          85000.0,
+          4500.0
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "order_items",
+        "from_column": "product_id",
+        "to_table": "products",
+        "to_column": "product_id"
+      },
+      {
+        "from_table": "order_items",
+        "from_column": "order_id",
+        "to_table": "orders",
+        "to_column": "order_id"
+      }
+    ],
+    "ai_description": "TABLE PURPOSE:\nThe \"order_items\" table contains information about the items in each order, including the product, quantity, and unit price.\n\nCOLUMN DESCRIPTIONS:\n- order_item_id: A unique identifier for each order item, serving as the primary key.\n- order_id: The identifier for the order in which the item is included.\n- product_id: The identifier for the product being ordered.\n- quantity: The number of units of the product ordered.\n- unit_price: The price per unit of the product ordered.\n\nRELATIONSHIPS:\nThe table is related to the \"products\" table through the \"product_id\" column, indicating that each product has multiple order items. It is also related to the \"orders\" table through the \"order_id\" column, showing that each order item belongs to a specific order.\n\nBUSINESS USE:\nThis table is used to support order management, allowing for the retrieval of order item information, such as product details and quantity, in conjunction with order information.\n\nIMPORTANT:\nThe \"order_items\" table does not have a default value for any column, indicating that the values in this table are manually entered or populated from another source."
+  },
+  {
+    "table": "orders",
+    "row_count": 50,
+    "columns": [
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          6,
+          4,
+          8
+        ]
+      },
+      {
+        "name": "order_date",
+        "type": "DATE",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "2025-02-13",
+          "2025-06-28",
+          "2025-06-25"
+        ]
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Completed",
+          "Cancelled",
+          "Pending"
+        ]
+      },
+      {
+        "name": "total_amount",
+        "type": "REAL",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          74900.0,
+          2400.0,
+          93200.0
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "order_items",
+        "from_column": "order_id",
+        "to_table": "orders",
+        "to_column": "order_id"
+      },
+      {
+        "from_table": "orders",
+        "from_column": "customer_id",
+        "to_table": "customers",
+        "to_column": "customer_id"
+      },
+      {
+        "from_table": "payments",
+        "from_column": "order_id",
+        "to_table": "orders",
+        "to_column": "order_id"
+      }
+    ],
+    "ai_description": "TABLE PURPOSE:\nThe orders table stores information about customer orders, including order details and relationships with other tables.\n\nCOLUMN DESCRIPTIONS:\n- order_id: Unique identifier for each order.\n- customer_id: Foreign key referencing the customers table, identifying the customer who made the order.\n- order_date: Date the order was made.\n- status: Status of the order (Completed, Cancelled, or Pending).\n- total_amount: Total amount of the order.\n\nRELATIONSHIPS:\nThe orders table is related to:\n- order_items table through the order_id column, indicating items within an order.\n- customers table through the customer_id column, linking orders to their respective customers.\n- payments table through the order_id column, connecting orders to payment records.\n\nBUSINESS USE:\nThis table is used to track and analyze customer orders, facilitating data-driven decision-making and providing insights into order trends and customer behavior.\n\nIMPORTANT:\nThe orders table is a key component of the database, serving as a central hub for order information and facilitating relationships with other tables."
+  },
+  {
+    "table": "payments",
+    "row_count": 50,
+    "columns": [
+      {
+        "name": "payment_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "payment_date",
+        "type": "DATE",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "2025-02-13",
+          "2025-06-28",
+          "2025-06-25"
+        ]
+      },
+      {
+        "name": "amount",
+        "type": "REAL",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          13500.0,
+          178900.0,
+          51600.0
+        ]
+      },
+      {
+        "name": "payment_method",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Credit Card",
+          "Debit Card",
+          "Debit Card"
+        ]
+      },
+      {
+        "name": "payment_status",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Paid",
+          "Refunded",
+          "Pending"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "payments",
+        "from_column": "order_id",
+        "to_table": "orders",
+        "to_column": "order_id"
+      }
+    ],
+    "ai_description": "TABLE PURPOSE:\nThe \"payments\" table stores information about payment transactions, including payment details, order associations, and payment status.\n\nCOLUMN DESCRIPTIONS:\n- payment_id: A unique identifier for each payment transaction.\n- order_id: The ID of the order associated with the payment.\n- payment_date: The date the payment was made.\n- amount: The amount of the payment.\n- payment_method: The method used for the payment.\n- payment_status: The current status of the payment.\n\nRELATIONSHIPS:\nThe \"payments\" table is associated with the \"orders\" table through the \"order_id\" column, allowing for the retrieval of order information related to each payment transaction.\n\nBUSINESS USE:\nThis table can be used by the business to track payment transactions, monitor payment status, and analyze payment patterns. It can also be used to integrate with other systems, such as the \"orders\" table, to gain a more complete understanding of the payment process.\n\nIMPORTANT:\nThe \"payments\" table has a total of 50 rows, with varying payment status and payment method values, providing a representative sample of payment data."
+  },
+  {
+    "table": "products",
+    "row_count": 10,
+    "columns": [
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "product_name",
+        "type": "TEXT",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Laptop Pro 14",
+          "Wireless Mouse",
+          "Mechanical Keyboard"
+        ]
+      },
+      {
+        "name": "category",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Electronics",
+          "Accessories",
+          "Accessories"
+        ]
+      },
+      {
+        "name": "price",
+        "type": "REAL",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          85000.0,
+          1200.0,
+          4500.0
+        ]
+      },
+      {
+        "name": "stock_quantity",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": "0",
+        "primary_key": false,
+        "sample_values": [
+          25,
+          150,
+          80
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "order_items",
+        "from_column": "product_id",
+        "to_table": "products",
+        "to_column": "product_id"
+      }
+    ],
+    "ai_description": "TABLE METADATA:\nThe products table stores information about various products, including product ID, product name, category, price, and stock quantity. It contains 10 rows of data.\n\nCOLUMN DESCRIPTIONS:\n- product_id: Unique identifier for each product, represented as an integer.\n- product_name: Name of the product, stored as text.\n- category: Category of the product, stored as text.\n- price: Price of the product, represented as a real number.\n- stock_quantity: Quantity of the product in stock, represented as an integer.\n\nRELATIONSHIPS:\nThe products table has a relationship with the order_items table, where the product ID in the products table matches the product ID in the order_items table.\n\nBUSINESS USE:\nThis table is likely used to retrieve product information for order management, inventory tracking, or customer lookup purposes.\n\nIMPORTANT:\nThis table has a primary key constraint on the product_id column, ensuring data uniqueness."
+  },
+  {
+    "table": "support_tickets",
+    "row_count": 30,
+    "columns": [
+      {
+        "name": "ticket_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "default": null,
+        "primary_key": true,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "issue_type",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "Payment Issue",
+          "Refund Request",
+          "Refund Request"
+        ]
+      },
+      {
+        "name": "priority",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "High",
+          "High",
+          "Low"
+        ]
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "In Progress",
+          "Resolved",
+          "In Progress"
+        ]
+      },
+      {
+        "name": "created_at",
+        "type": "DATE",
+        "nullable": true,
+        "default": null,
+        "primary_key": false,
+        "sample_values": [
+          "2025-01-26",
+          "2025-11-07",
+          "2025-10-03"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "support_tickets",
+        "from_column": "customer_id",
+        "to_table": "customers",
+        "to_column": "customer_id"
+      }
+    ],
+    "ai_description": "TABLE PURPOSE:\nThe support_tickets table stores information about customer support tickets, including ticket details and customer information.\n\nCOLUMN DESCRIPTIONS:\n- ticket_id: Unique identifier for each support ticket, with sample values starting from 1.\n- customer_id: Foreign key referencing the customer ID in the customers table, with sample values 1, 3, and 4.\n- issue_type: Type of issue reported by the customer, such as \"Payment Issue\" or \"Refund Request\".\n- priority: Priority level of the issue, with sample values \"High\" and \"Low\".\n- status: Current status of the issue, with sample values \"In Progress\" and \"Resolved\".\n- created_at: Date the issue was reported, with sample values in the format \"YYYY-MM-DD\".\n\nRELATIONSHIPS:\nThe support_tickets table has a foreign key relationship with the customers table, where the customer_id column references the customer_id column in the customers table.\n\nBUSINESS USE:\nThis table can be used to track and manage customer support tickets, including viewing ticket details, updating issue types and priorities, and resolving issues.\n\nIMPORTANT:\nThe support_tickets table can be used to identify trends and patterns in customer support requests, such as the most common issue types or priority levels."
+  }
+]

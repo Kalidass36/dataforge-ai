@@ -1,0 +1,389 @@
+{
+  "customers": {
+    "row_count": 10,
+    "columns": [
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "email",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "region",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "signup_date",
+        "type": "DATE",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": []
+  },
+  "employees": {
+    "row_count": 8,
+    "columns": [
+      {
+        "name": "employee_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "department",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "salary",
+        "type": "REAL",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "hire_date",
+        "type": "DATE",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": []
+  },
+  "order_items": {
+    "row_count": 130,
+    "columns": [
+      {
+        "name": "order_item_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "quantity",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "unit_price",
+        "type": "REAL",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "product_id"
+        ],
+        "references_table": "products",
+        "references_columns": [
+          "product_id"
+        ]
+      },
+      {
+        "columns": [
+          "order_id"
+        ],
+        "references_table": "orders",
+        "references_columns": [
+          "order_id"
+        ]
+      }
+    ]
+  },
+  "orders": {
+    "row_count": 50,
+    "columns": [
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "order_date",
+        "type": "DATE",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "total_amount",
+        "type": "REAL",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "customer_id"
+        ],
+        "references_table": "customers",
+        "references_columns": [
+          "customer_id"
+        ]
+      }
+    ]
+  },
+  "payments": {
+    "row_count": 50,
+    "columns": [
+      {
+        "name": "payment_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "payment_date",
+        "type": "DATE",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "amount",
+        "type": "REAL",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "payment_method",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "payment_status",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "order_id"
+        ],
+        "references_table": "orders",
+        "references_columns": [
+          "order_id"
+        ]
+      }
+    ]
+  },
+  "products": {
+    "row_count": 10,
+    "columns": [
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "product_name",
+        "type": "TEXT",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "category",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "price",
+        "type": "REAL",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "stock_quantity",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": []
+  },
+  "support_tickets": {
+    "row_count": 30,
+    "columns": [
+      {
+        "name": "ticket_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "issue_type",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "priority",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      },
+      {
+        "name": "created_at",
+        "type": "DATE",
+        "nullable": true,
+        "primary_key": false,
+        "null_count": 0,
+        "null_percentage": 0.0
+      }
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "customer_id"
+        ],
+        "references_table": "customers",
+        "references_columns": [
+          "customer_id"
+        ]
+      }
+    ]
+  }
+}
